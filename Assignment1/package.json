@@ -1,7 +1,14 @@
 {
   "name": "assignment1",
-  "version": "0.0.0",
+  "description": "my assginment 01",
+  "version": "0.0.1",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
   "private": true,
+
   "scripts": {
     "start": "node ./server.js"
   },
