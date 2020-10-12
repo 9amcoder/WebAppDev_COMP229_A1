@@ -4,7 +4,7 @@ var router = express.Router();
 //Get about page
 router.get('/',function(req, res, next){
     res.render('services', {
-      title: 'services'
+      title: 'Services'
       
     });
 });

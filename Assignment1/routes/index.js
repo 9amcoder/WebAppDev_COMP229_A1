@@ -4,13 +4,13 @@ var router = express.Router();
 //Get home page
 router.get('/',function(req, res, next){
     res.render('index', {
-      title: 'index'
+      title: 'Index'
       
     });
 });
 router.get('/home',function(req, res, next){
   res.render('index', {
-    title: 'index'
+    title: 'Index'
     
   });
 });
