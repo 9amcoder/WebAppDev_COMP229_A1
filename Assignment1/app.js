@@ -4,10 +4,14 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-
+//routers
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
-
+let aboutRouter = require('./routes/about');
+let projectsRouter = require('./routes/projects');
+let servicesRouter = require('./routes/services');
+let contactRouter = require('./routes/contact');
+//
 let app = express();
 
 // view engine setup
@@ -20,9 +24,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
+//to show static file like JPG,CSS, JS
+app.use('/static',(express.static('public')));
 
+//use router
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/about',aboutRouter);
+app.use('/projects',projectsRouter);
+app.use('/services',servicesRouter);
+app.use('/contact',contactRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
